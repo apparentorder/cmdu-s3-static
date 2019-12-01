@@ -21,7 +21,7 @@ resource aws_s3_bucket alias {
 	acl = "public-read"
 
 	website {
-		redirect_all_requests_to = "${var.bucket_name}.s3.DUALSTACK.${data.aws_region.current.name}.amazonaws.com/index.html?"
+		redirect_all_requests_to = "https://${var.bucket_name}.s3.DUALSTACK.${data.aws_region.current.name}.amazonaws.com/index.html?foo"
 	}
 
 	tags = var.dutag
